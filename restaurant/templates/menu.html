@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Menu</h1>
+<div class="colmun">
+    {% for item in menu_data%}
+    <p>
+        <a href="{% url 'menu_item' pk=item.id %}">{{ item.name }}</a> 
+        <spam class="menu-price">{{ item.price }}</spam>
+    </p>
+    {% endfor %}
+</div>
+{% endblock %}
